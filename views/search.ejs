@@ -1,0 +1,36 @@
+<%- include('parts/header')%>
+<%- include('parts/navbar')%>
+
+    <div class="container">
+        <form action="/search" class="text-center">
+            <input type="text" name="name" class="form-control mt-2" placeholder="Enter name">
+            <input type="submit" value="Search" class="btn btn-dark mt-2">
+        </form> <br>
+        <% if(searchMode) { %>
+            <div>
+                <% if (users.length === 0) { %>
+                    <p class="alert alert-danger mt-3">No Users found</p>
+                <% } else { %>
+                    <div class="row">
+                        <% for (let user of users) { %>
+                            <div class="col col-12 col-md-6 col-lg-4 col-xl-3 rounded mt-5">
+                                <img class="mx-auto d-block rounded-circle border border-dark mt-5" src="/<%= user.image %>" style="height: 200px; width: 200px;">
+                                <div style="text-align: center;" class="chat mt-2">
+                                    <h3>
+                                        <a href="/profile/<%= user._id %>"><%= user.username %></a>
+                                    </h3>
+                                </div>
+                            </div>
+                        <% } %>
+                    </div>
+                <% } %>
+            </div>
+        <% } %>
+    </div>
+
+
+<%- include('parts/scripts')%>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/sockets/init.js"></script>
+</body>
+</html>

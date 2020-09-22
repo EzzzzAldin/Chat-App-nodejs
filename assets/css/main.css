@@ -1,0 +1,127 @@
+.bg-dark {
+    background-color: #8a2b8a!important;
+}
+
+.navbar-dark .nav-item .nav-link {
+    color: #fff;
+}
+
+.on {
+    text-align: center;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#onlineFriends a {
+    text-decoration: none;
+}
+
+.br {
+    background-color: #8a2b8a;
+    color: #fff;
+    border: 0px;
+}
+
+.br:hover {
+    background-color: #db3bdb;
+    color: #fff;
+}
+
+.border-dark {
+    background-color: #8a2b8a;
+}
+
+.chat .messages {
+    height: 83vh;
+    padding: 15px;
+    position: relative;
+}
+
+.chat #messages-container {
+    height: 85%;
+    overflow: auto;
+}
+
+.chat .messages-form {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.chat .messages-form textarea {
+    height: 50px;
+    resize: none;
+    width: 80%;
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.chat .messages-form button {
+    position: relative;
+    top: -20px;
+}
+
+.chat a {
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.chat span.msg {
+    display: block;
+    width: max-content;
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    font-size: 20px;
+    color: #fff;
+    border-radius: 20px;
+    background-color: #007bff;
+}
+
+.chat .messages {
+    height: 83vh;
+    padding: 15px;
+    position: relative;
+}
+
+.chat #messages-container {
+    height: 85%;
+    overflow: auto;
+}
+
+.chat span.msg.left {
+    background: #8a2b8a;
+}
+
+.chat span.msg.right {
+    background: #7d7d7d;
+    margin-left: 80%;
+}
+
+.chat .messages-form {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.chat .messages-form textarea {
+    height: 50px;
+    resize: none;
+    width: 80%;
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.chat .messages-form button {
+    position: relative;
+    top: -20px;
+}

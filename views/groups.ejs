@@ -1,0 +1,25 @@
+<%- include('parts/header')%>
+<%- include('parts/navbar')%>
+
+<div class='container'>
+        <div class="row">
+                <% for (let group of groups) { %>
+                    <div class="col col-12 col-md-6 col-lg-4 col-xl-3 rounded mt-5">
+                        <img class="mx-auto d-block rounded-circle border border-dark mt-5" src="/<%= group.image %>" style="height: 200px; width: 200px;">
+                        <div style="text-align: center;" class="mt-2">
+                            <h3>
+                                <a href="/groups/<%= group._id %>" style="color: #000"> <%= group.name %> </a>
+                            </h3>
+                        </div>
+                    </div>
+                <% } %>
+        </div>
+</div>
+
+
+<%- include('parts/scripts')%>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/sockets/init.js"></script>
+
+</body>
+</html>

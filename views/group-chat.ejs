@@ -1,0 +1,54 @@
+<%- include('parts/header')%>
+<%- include('parts/navbar')%>
+
+<div class="container">
+    <div class="row chat">
+        <h3 class="mt-3">Member</h3>
+                <% for (let user of group.users) { %>
+                    <div class="col col-12 col-md-3 col-lg-4 col-xl-1 mt-1">
+                        <h6 style="text-align: center;">
+                            <img class="mx-auto d-block rounded-circle border border-dark" src="/<%= user.image%>" style="height: 30px; width: 30px;">
+                            <a href="/profile/<%= user.id%>"><%= user.username%></a>
+                        </h4>    
+                    </div>
+                <% } %>
+    </div>
+
+</div>
+
+<div class="row chat">
+    <div class="col col-12 col-md-3">
+        <input type="hidden" id="chatId" value="<%= group._id%>">
+        <img class="mx-auto d-block rounded-circle border border-dark" src="/<%= group.image%>" style="height: 200px; width: 200px;">
+        <br>
+        <h4 style="text-align: center;">
+            <%= group.name%>
+        </h4>
+    </div>
+    <div class="col -col-12 col-md-9 messages">
+        <div id="messages-container">
+            <% for (let message of messages) { %>
+                <span class="msg">
+                    <span>
+                        <%= message.sender.username %>
+                    </span>
+                    <br>
+                    <%= message.content%>
+                </span>
+            <% } %>
+        </div>
+        <div class="messages-form">
+            <textarea class="form-control" id="message"></textarea>
+            <button id="sendBtn" class="btn br">Send</button>
+        </div>
+    </div>
+</div>
+
+
+<%- include('parts/scripts')%>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/sockets/init.js"></script>
+<script src="/js/sockets/group.js"></script>
+
+</body>
+</html>

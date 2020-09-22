@@ -1,0 +1,43 @@
+<%- include('parts/header')%>
+<%- include('parts/navbar')%>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mt-5">
+                <img class="mx-auto d-block rounded-circle" src="/<%= userImage %>" style="height: 300px; width: 300px;">
+            </div>
+        </div>
+        <h1 class="text-center"><%= username %></h1>
+        <% if (!isOwner) { %>
+            <form method="post" id="friendsForm">
+                <input id="myId" type="hidden" name="myId" value="<%= myId %>">
+                <input id="myName" type="hidden" name="myName" value="<%= myName %>">
+                <input id="myImage" type="hidden" name="myImage" value="<%= myImage %>">
+                <input id="friendId" type="hidden" name="friendId" value="<%= friendId %>">
+                <input id="friendName" type="hidden" name="friendName" value="<%= username %>">
+                <input id="friendImage" type="hidden" name="friendImage" value="<%= userImage %>">
+                <div class="col-md-12 text-center">
+                    <% if (isFriends) { %>
+                        <input type="submit" value="Delete Friend" class="btn btn-danger mt-2" formaction="/friend/delete">
+                    <% } else if (isRequestSent){ %>
+                        <input type="submit" value="Cancel Request" class="btn btn-danger mt-2" formaction="/friend/cancel">
+                    <% } else if (isRequestRecieved){ %>
+                        <input type="submit" value="Accept Friend Request" class="btn br mt-2" formaction="/friend/accept">
+                        <input type="submit" value="Reject" class="btn btn-danger mt-2" formaction="/friend/reject">
+                    <% } else { %>
+                        <input id="addBtn" type="submit" value="Add Friend" class="btn br mt-2">
+                    <% } %>
+                </div>
+            </form>
+        <% } %> 
+    </div>
+
+
+<%- include('parts/scripts')%>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/sockets/init.js"></script>
+<% if (!isOwner && !isFriends && !isRequestSent && !isRequestRecieved) { %>
+    <script src="/js/sockets/friend.js"></script>
+<% } %>
+</body>
+</html>
