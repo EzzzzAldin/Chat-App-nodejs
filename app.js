@@ -49,7 +49,7 @@ app.use(flash());
 
 // Init Session Store
 const STORE = new SessionStore({
-    uri:'mongodb://127.0.0.1:27017/chat-app',
+    uri:'mongodb+srv://EzzAldin:Naruto74@cluster0.cufwz.mongodb.net/chat-app?retryWrites=true&w=majority',
     collection: 'sessions'
 });
 app.use(session({
