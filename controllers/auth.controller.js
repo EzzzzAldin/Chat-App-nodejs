@@ -14,8 +14,10 @@ exports.getSignup = (req, res) => {
 exports.postSignup = (req, res) => {
     // Check If not Found Errors
     if( validationResult(req).isEmpty()) {
+        // Get Image
+        req.body.image = req.file.filename;
         // Create New Account
-        authModel.createNewUser(req.body.username, req.body.email, req.body.password)
+        authModel.createNewUser(req.body)
                  .then(() => res.redirect('/login'))
                  .catch(err => {
                      console.log(err);

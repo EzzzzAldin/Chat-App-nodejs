@@ -3,7 +3,7 @@
 
 <div class="container text-center">
     <h3>Create Account</h3>
-    <form action="/signup" method="POST">
+    <form action="/signup" method="POST" enctype="multipart/form-data">
         <input type="text" class="form-control mt-3" name="username" placeholder="Username">
         <% let usernameError = validationErrors.find(err => err.param === 'username') %>
         <% if (usernameError) { %>
