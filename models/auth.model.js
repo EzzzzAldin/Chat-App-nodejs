@@ -5,7 +5,7 @@ const User = require('./user.model').User;
 
 const bcrypt = require('bcrypt');
 
-exports.createNewUser = (username, email, password) => {
+exports.createNewUser = (username, email, password, image) => {
     return new Promise((resolve, reject) => {
         // DB Connect
         mongoose.connect(DB_URL, {useNewUrlParser: true, useUnifiedTopology: true}).then(() => {
@@ -25,7 +25,8 @@ exports.createNewUser = (username, email, password) => {
             let user = new User ({
                 username: username,
                 email: email,
-                password: hashedPassword
+                password: hashedPassword,
+                image: image
             })
             return user.save();
         }).then(() => {

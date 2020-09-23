@@ -17,7 +17,7 @@ exports.postSignup = (req, res) => {
         // Get Image
         req.body.image = req.file.filename;
         // Create New Account
-        authModel.createNewUser(req.body)
+        authModel.createNewUser(req.body.username, req.body.email, req.body.password, req.body.image)
                  .then(() => res.redirect('/login'))
                  .catch(err => {
                      console.log(err);
