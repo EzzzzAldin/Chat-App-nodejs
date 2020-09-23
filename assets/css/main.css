@@ -111,6 +111,8 @@
     background: #7d7d7d;
     margin-left: 50%;
     width: 500px;
+    text-align: right;
+    margin-left: auto;
 }
 
 .chat .messages-form {
