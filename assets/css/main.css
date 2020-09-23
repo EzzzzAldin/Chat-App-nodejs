@@ -100,6 +100,7 @@
     border: 2px solid #dedede;
     background-color: #dfd9d92e;
     padding: 10px;
+    width: 1000px;
 }
 
 .chat span.msg.left {
@@ -109,8 +110,9 @@
 
 .chat span.msg.right {
     background: #7d7d7d;
-    margin-left: 80%;
+    margin-left: 50%;
     width: 500px;
+    text-align: right;
 }
 
 .chat .messages-form {
